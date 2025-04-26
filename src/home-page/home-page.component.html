@@ -1,0 +1,45 @@
+<!-- Hero Banner -->
+<div class="container-fluid bg-primary text-white text-center p-5 mb-4">
+    <h1 class="display-4">Welcome to MyStore</h1>
+    <p class="lead">Shop the latest trends and best deals!</p>
+    <button class="btn btn-light btn-lg">Shop Now</button>
+  </div>
+  
+  <!-- Featured Categories -->
+  <div class="container mb-5">
+    <h2 class="text-center mb-4">Shop by Category</h2>
+    <div class="row text-center">
+      <div class="col-md-4">
+        <img src="images/phone.jpg" class="img-fluid rounded mb-2" alt="Electronics">
+        <h5>Electronics</h5>
+      </div>
+      <div class="col-md-4">
+        <img src="images/phone.jpg" class="img-fluid rounded mb-2" alt="Fashion">
+        <h5>Fashion</h5>
+      </div>
+      <div class="col-md-4">
+        <img src="images/phone.jpg" class="img-fluid rounded mb-2" alt="Home">
+        <h5>Home & Living</h5>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Featured Products -->
+  <div class="container mb-5">
+    <h2 class="text-center mb-4">Featured Products</h2>
+    <div class="row">
+        @for (product of featuredProducts; track product){
+            <div class="col-md-3" >
+                <div class="card">
+                  <img [src]="product.image" class="card-img-top" alt="{{ product.name }}">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">{{ product.price | currency }}</p>
+                    <button class="btn btn-primary">View</button>
+                  </div>
+                </div>
+              </div>
+        }
+    </div>
+  </div>
+  
